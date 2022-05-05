@@ -1,4 +1,4 @@
-# SolidState Smart Contract Project
+# SolidState Math Utils for ABDK libraries
 
 SolidState extensions for the `abdk-libraries-solidity` [package](https://www.npmjs.com/package/abdk-libraries-solidity). SolidState and this package are not affiliated with ABDK.
 
