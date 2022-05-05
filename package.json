@@ -1,6 +1,6 @@
 {
   "name": "@solidstate/abdk-math-extensions",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "Nick Barry",
   "license": "MIT",
   "description": "SolidState extensions for the ABDK Solidity libraries",
