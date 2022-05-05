@@ -1,5 +1,6 @@
 import '@nomiclabs/hardhat-waffle';
 import '@typechain/hardhat';
+import 'hardhat-exposed';
 import 'hardhat-gas-reporter';
 import 'hardhat-spdx-license-identifier';
 import 'solidity-coverage';
@@ -20,6 +21,8 @@ export default {
       },
     },
   },
+
+  exposed: { prefix: '_' },
 
   gasReporter: {
     enabled: REPORT_GAS === 'true',

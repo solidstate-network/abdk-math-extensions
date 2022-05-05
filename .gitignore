@@ -9,4 +9,6 @@ coverage.json
 
 typechain-types/
 
+contracts-exposed/
+
 .env
