@@ -7,8 +7,6 @@ cache/
 coverage/
 coverage.json
 
-docgen/
-
 typechain-types/
 
 .env

@@ -1,8 +1,14 @@
 # SolidState Smart Contract Project
 
-> Note: This repository was generated from a template or is the template itself. To set up a new project, set the missing data marked "TODO" in `package.json` and remove this notice.
+SolidState extensions for the `abdk-libraries-solidity` [package](https://www.npmjs.com/package/abdk-libraries-solidity). SolidState and this package are not affiliated with ABDK.
 
-This project is built with [SolidState](https://github.com/solidstate-network). See the [solidstate-solidity](https://github.com/solidstate-network/solidstate-solidity) documentation for information about contract integration and testing.
+## Installation
+
+Install the package as a development dependency:
+
+```bash
+yarn add --dev @solidstate/abdk-math-utils
+```
 
 ## Development
 
@@ -24,16 +30,11 @@ Compile contracts via Hardhat:
 yarn run hardhat compile
 ```
 
-The Hardhat environment relies on the following environment variables. The `dotenv` package will attempt to read them from the `.env` and `.env.secret` files, if they are present.
+The Hardhat environment relies on the following environment variables. The `dotenv` package will attempt to read them from the `.env` file, if it is present.
 
-| Key                 | Description                                                              |
-| ------------------- | ------------------------------------------------------------------------ |
-| `API_KEY_ETHERSCAN` | [Etherscan](https://etherscan.io//) API key for source code verification |
-| `NODE_URL_MAINNET`  | JSON-RPC node URL for `mainnet` network                                  |
-| `NODE_URL_TESTNET`  | JSON-RPC node URL for `testnet` network                                  |
-| `PKEY_TESTNET`      | private key for test/development use on `testnet` network                |
-| `PKEY_MAINNET`      | private key for production use on `mainnet` network                      |
-| `REPORT_GAS`        | if `true`, a gas report will be generated after running tests            |
+| Key          | Description                                                   |
+| ------------ | ------------------------------------------------------------- |
+| `REPORT_GAS` | if `true`, a gas report will be generated after running tests |
 
 ### Networks
 
@@ -57,12 +58,4 @@ Generate a code coverage report using `solidity-coverage`:
 
 ```bash
 yarn run hardhat coverage
-```
-
-### Documentation
-
-A static documentation site can be generated using `hardhat-docgen`:
-
-```bash
-yarn run hardhat docgen
 ```
