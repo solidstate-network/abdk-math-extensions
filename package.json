@@ -1,10 +1,10 @@
 {
-  "name": "@solidstate/abkd-math-utils",
+  "name": "@solidstate/abkd-math-extensions",
   "version": "0.0.0",
   "author": "Nick Barry",
   "license": "MIT",
   "description": "SolidState extensions for the ABDK Solidity libraries",
-  "repository": "github:solidstate-network/abdk-math-utils",
+  "repository": "github:solidstate-network/abdk-math-extensions",
   "keywords": [
     "solidity",
     "smart-contracts",

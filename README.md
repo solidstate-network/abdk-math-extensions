@@ -1,4 +1,4 @@
-# SolidState Math Utils for ABDK libraries
+# SolidState Extensions for ABDK Libraries
 
 SolidState extensions for the `abdk-libraries-solidity` [package](https://www.npmjs.com/package/abdk-libraries-solidity). SolidState and this package are not affiliated with ABDK.
 
@@ -7,7 +7,7 @@ SolidState extensions for the `abdk-libraries-solidity` [package](https://www.np
 Install the package as a development dependency:
 
 ```bash
-yarn add --dev @solidstate/abdk-math-utils
+yarn add --dev @solidstate/abdk-math-extensions
 ```
 
 ## Development
