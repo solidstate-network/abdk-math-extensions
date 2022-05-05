@@ -50,5 +50,14 @@
     "ts-node": "^10.7.0",
     "typechain": "^8.0.0",
     "typescript": "^4.6.4"
+  },
+  "peerDependencies": {
+    "abdk-libraries-solidity": "^3.0.0"
+  },
+  "files": [
+    "contracts/*.sol"
+  ],
+  "publishConfig": {
+    "access": "public"
   }
 }

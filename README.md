@@ -4,10 +4,10 @@ SolidState extensions for the `abdk-libraries-solidity` [package](https://www.np
 
 ## Installation
 
-Install the package as a development dependency:
+Install the package as well as the required ABDK package as development dependencies:
 
 ```bash
-yarn add --dev @solidstate/abdk-math-extensions
+yarn add --dev @solidstate/abdk-math-extensions abdk-libraries-solidity
 ```
 
 ## Development
