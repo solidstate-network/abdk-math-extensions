@@ -21,11 +21,6 @@ export default {
     },
   },
 
-  docgen: {
-    clear: true,
-    runOnCompile: false,
-  },
-
   gasReporter: {
     enabled: REPORT_GAS === 'true',
   },
