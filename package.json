@@ -36,7 +36,7 @@
     "@typechain/hardhat": "^9.1.0",
     "@types/chai": "^5.2.2",
     "@types/mocha": "^10.0.10",
-    "@types/node": "^18.19.115",
+    "@types/node": "^24.0.10",
     "abdk-libraries-solidity": "^3.2.0",
     "chai": "^4.5.0",
     "dotenv": "^17.0.1",
