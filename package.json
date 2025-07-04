@@ -26,8 +26,8 @@
     "prettier": "prettier --write --ignore-path .gitignore ."
   },
   "devDependencies": {
-    "@nomiclabs/hardhat-ethers": "^2.2.3",
-    "@nomiclabs/hardhat-waffle": "^2.0.6",
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.9",
+    "@nomicfoundation/hardhat-ethers": "^3.0.9",
     "@typechain/ethers-v5": "^11.1.2",
     "@typechain/hardhat": "^9.1.0",
     "@types/chai": "^4.3.20",
@@ -36,8 +36,7 @@
     "abdk-libraries-solidity": "^3.2.0",
     "chai": "^4.5.0",
     "dotenv": "^16.6.1",
-    "ethereum-waffle": "^3.4.4",
-    "ethers": "^5.8.0",
+    "ethers": "^6.15.0",
     "hardhat": "^2.25.0",
     "hardhat-exposed": "^0.3.19",
     "hardhat-gas-reporter": "^2.3.0",

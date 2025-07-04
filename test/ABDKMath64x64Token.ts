@@ -26,10 +26,10 @@ describe('ABDKMath64x64Token', function () {
     it('returns scaled decimal representation of 64x64 fixed point number', async function () {
       for (let decimals = 0; decimals < 22; decimals++) {
         for (let fixed of fixedPointValues) {
-          const bn = ethers.BigNumber.from(fixed);
+          const bn = BigInt(fixed);
 
-          expect(await instance.callStatic._toDecimals(bn, decimals)).to.equal(
-            bn.mul(ethers.BigNumber.from(`1${'0'.repeat(decimals)}`)).shr(64),
+          expect(await instance._toDecimals.staticCall(bn, decimals)).to.equal(
+            (bn * BigInt(`1${'0'.repeat(decimals)}`)) >> 64n,
           );
         }
       }
@@ -39,10 +39,10 @@ describe('ABDKMath64x64Token', function () {
       it('given 64x64 fixed point number is negative', async function () {
         for (let decimals = 0; decimals < 22; decimals++) {
           for (let fixed of fixedPointValues.filter((f) => Number(f) > 0)) {
-            const bn = ethers.constants.Zero.sub(ethers.BigNumber.from(fixed));
+            const bn = -BigInt(fixed);
 
             await expect(
-              instance.callStatic._toDecimals(bn, decimals),
+              instance._toDecimals.staticCall(bn, decimals),
             ).to.be.revertedWith('Transaction reverted without a reason');
           }
         }
@@ -60,36 +60,27 @@ describe('ABDKMath64x64Token', function () {
 
           const truncated = truncatedArray?.[0] ?? '0';
 
-          const bn = ethers.utils.parseUnits(truncated, decimals);
+          const bn = ethers.parseUnits(truncated, decimals);
 
           expect(
-            await instance.callStatic._fromDecimals(bn, decimals),
-          ).to.equal(
-            bn.shl(64).div(ethers.BigNumber.from(`1${'0'.repeat(decimals)}`)),
-          );
+            await instance._fromDecimals.staticCall(bn, decimals),
+          ).to.equal((bn << 64n) / BigInt(`1${'0'.repeat(decimals)}`));
         }
       }
     });
 
     describe('reverts if', function () {
       it('given number exceeds range of 64x64 fixed point representation', async function () {
-        const max = ethers.BigNumber.from('0x7FFFFFFFFFFFFFFF');
+        const max = BigInt('0x7FFFFFFFFFFFFFFF');
 
         for (let decimals = 0; decimals < 22; decimals++) {
-          const bn = max
-            .add(ethers.constants.One)
-            .mul(ethers.BigNumber.from(`1${'0'.repeat(decimals)}`))
-            .sub(ethers.constants.One);
+          const bn = (max + 1n) * BigInt(`1${'0'.repeat(decimals)}`) - 1n;
 
-          await expect(instance.callStatic._fromDecimals(bn, decimals)).not.to
+          await expect(instance._fromDecimals.staticCall(bn, decimals)).not.to
             .be.reverted;
 
-          await expect(
-            instance.callStatic._fromDecimals(
-              bn.add(ethers.constants.One),
-              decimals,
-            ),
-          ).to.be.reverted;
+          await expect(instance._fromDecimals.staticCall(bn + 1n, decimals)).to
+            .be.reverted;
         }
       });
     });
@@ -98,10 +89,10 @@ describe('ABDKMath64x64Token', function () {
   describe('#toWei', function () {
     it('returns wei representation of 64x64 fixed point number', async function () {
       for (let fixed of fixedPointValues) {
-        const bn = ethers.BigNumber.from(fixed);
+        const bn = BigInt(fixed);
 
-        expect(await instance.callStatic._toWei(bn)).to.equal(
-          bn.mul(ethers.BigNumber.from(`1${'0'.repeat(18)}`)).shr(64),
+        expect(await instance._toWei.staticCall(bn)).to.equal(
+          (bn * BigInt(`1${'0'.repeat(18)}`)) >> 64n,
         );
       }
     });
@@ -109,9 +100,9 @@ describe('ABDKMath64x64Token', function () {
     describe('reverts if', function () {
       it('given 64x64 fixed point number is negative', async function () {
         for (let fixed of fixedPointValues.filter((f) => Number(f) > 0)) {
-          const bn = ethers.constants.Zero.sub(ethers.BigNumber.from(fixed));
+          const bn = -BigInt(fixed);
 
-          await expect(instance.callStatic._toWei(bn)).to.be.revertedWith(
+          await expect(instance._toWei.staticCall(bn)).to.be.revertedWith(
             'Transaction reverted without a reason',
           );
         }
@@ -122,27 +113,23 @@ describe('ABDKMath64x64Token', function () {
   describe('#fromWei', function () {
     it('returns 64x64 fixed point representation of wei number', async function () {
       for (let decimal of decimalValues) {
-        const bn = ethers.utils.parseEther(decimal);
+        const bn = ethers.parseEther(decimal);
 
-        expect(await instance.callStatic._fromWei(bn)).to.equal(
-          bn.shl(64).div(ethers.BigNumber.from(`1${'0'.repeat(18)}`)),
+        expect(await instance._fromWei.staticCall(bn)).to.equal(
+          (bn << 64n) / BigInt(`1${'0'.repeat(18)}`),
         );
       }
     });
 
     describe('reverts if', function () {
       it('given wei number exceeds range of 64x64 fixed point representation', async function () {
-        const max = ethers.BigNumber.from('0x7FFFFFFFFFFFFFFF');
+        const max = BigInt('0x7FFFFFFFFFFFFFFF');
 
-        const bn = max
-          .add(ethers.constants.One)
-          .mul(ethers.BigNumber.from(`1${'0'.repeat(18)}`))
-          .sub(ethers.constants.One);
+        const bn = (max + 1n) * BigInt(`1${'0'.repeat(18)}`) - 1n;
 
-        await expect(instance.callStatic._fromWei(bn)).not.to.be.reverted;
+        await expect(instance._fromWei.staticCall(bn)).not.to.be.reverted;
 
-        await expect(instance.callStatic._fromWei(bn.add(ethers.constants.One)))
-          .to.be.reverted;
+        await expect(instance._fromWei.staticCall(bn + 1n)).to.be.reverted;
       });
     });
   });
