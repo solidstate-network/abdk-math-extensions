@@ -22,7 +22,7 @@
     "buidler"
   ],
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky",
     "prettier": "prettier --write --ignore-path .gitignore ."
   },
   "devDependencies": {
