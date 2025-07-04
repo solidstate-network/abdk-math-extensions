@@ -16,12 +16,11 @@ library ABDKMath64x64Token {
      * @param decimals token display decimals
      * @return value decimal representation of token amount
      */
-    function toDecimals(int128 value64x64, uint8 decimals)
-        internal
-        pure
-        returns (uint256 value)
-    {
-        value = value64x64.mulu(10**decimals);
+    function toDecimals(
+        int128 value64x64,
+        uint8 decimals
+    ) internal pure returns (uint256 value) {
+        value = value64x64.mulu(10 ** decimals);
     }
 
     /**
@@ -30,12 +29,11 @@ library ABDKMath64x64Token {
      * @param decimals token display decimals
      * @return value64x64 64x64 fixed point representation of token amount
      */
-    function fromDecimals(uint256 value, uint8 decimals)
-        internal
-        pure
-        returns (int128 value64x64)
-    {
-        value64x64 = ABDKMath64x64.divu(value, 10**decimals);
+    function fromDecimals(
+        uint256 value,
+        uint8 decimals
+    ) internal pure returns (int128 value64x64) {
+        value64x64 = ABDKMath64x64.divu(value, 10 ** decimals);
     }
 
     /**
