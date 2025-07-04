@@ -1,8 +1,8 @@
-# SolidState Extensions for ABDK Libraries
+# Solidstate Extensions for ABDK Libraries
 
-SolidState extensions for the `abdk-libraries-solidity` [package](https://www.npmjs.com/package/abdk-libraries-solidity). Developed as a part of the [Premia Finance smart contracts](https://github.com/Premian-Labs/premia-contracts).
+Solidstate extensions for the `abdk-libraries-solidity` [package](https://www.npmjs.com/package/abdk-libraries-solidity). Developed as a part of the [Premia Finance smart contracts](https://github.com/Premian-Labs/premia-contracts).
 
-> **Note**: SolidState, Premia, and this package are not affiliated with ABDK.
+> **Note**: Solidstate, Premia, and this package are not affiliated with ABDK.
 
 ## Installation
 

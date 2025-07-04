@@ -1,7 +1,7 @@
 {
   "name": "@solidstate/abdk-math-extensions",
   "version": "1.0.0",
-  "description": "SolidState extensions for the ABDK Solidity libraries",
+  "description": "Solidstate extensions for the ABDK Solidity libraries",
   "keywords": [
     "solidity",
     "smart-contracts",

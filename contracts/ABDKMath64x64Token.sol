@@ -5,7 +5,7 @@ pragma solidity ^0.8.0;
 import { ABDKMath64x64 } from 'abdk-libraries-solidity/ABDKMath64x64.sol';
 
 /**
- * @title SolidState token extensions for ABDKMath64x64 library
+ * @title Solidstate token extensions for ABDKMath64x64 library
  */
 library ABDKMath64x64Token {
     using ABDKMath64x64 for int128;
