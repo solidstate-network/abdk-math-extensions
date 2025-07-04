@@ -1,10 +1,7 @@
 {
   "name": "@solidstate/abdk-math-extensions",
   "version": "1.0.0",
-  "author": "Nick Barry",
-  "license": "MIT",
   "description": "SolidState extensions for the ABDK Solidity libraries",
-  "repository": "github:solidstate-network/abdk-math-extensions",
   "keywords": [
     "solidity",
     "smart-contracts",
@@ -20,6 +17,12 @@
     "library",
     "hardhat",
     "buidler"
+  ],
+  "repository": "github:solidstate-network/abdk-math-extensions",
+  "license": "MIT",
+  "author": "Nick Barry",
+  "files": [
+    "contracts/*.sol"
   ],
   "scripts": {
     "prepare": "husky",
@@ -45,6 +48,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.1.2",
     "prettier": "^3.6.2",
+    "prettier-plugin-packagejson": "^2.5.18",
     "prettier-plugin-solidity": "^2.0.0",
     "solidity-coverage": "^0.8.16",
     "ts-node": "^10.9.2",
@@ -54,9 +58,6 @@
   "peerDependencies": {
     "abdk-libraries-solidity": "^3.0.0"
   },
-  "files": [
-    "contracts/*.sol"
-  ],
   "publishConfig": {
     "access": "public"
   }
