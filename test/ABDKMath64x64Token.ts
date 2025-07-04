@@ -43,7 +43,7 @@ describe('ABDKMath64x64Token', function () {
 
             await expect(
               instance._toDecimals.staticCall(bn, decimals),
-            ).to.be.revertedWith('Transaction reverted without a reason');
+            ).to.be.revertedWithoutReason();
           }
         }
       });
@@ -102,9 +102,9 @@ describe('ABDKMath64x64Token', function () {
         for (let fixed of fixedPointValues.filter((f) => Number(f) > 0)) {
           const bn = -BigInt(fixed);
 
-          await expect(instance._toWei.staticCall(bn)).to.be.revertedWith(
-            'Transaction reverted without a reason',
-          );
+          await expect(
+            instance._toWei.staticCall(bn),
+          ).to.be.revertedWithoutReason();
         }
       });
     });
