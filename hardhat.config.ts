@@ -1,4 +1,5 @@
-import '@nomiclabs/hardhat-waffle';
+import '@nomicfoundation/hardhat-chai-matchers';
+import '@nomicfoundation/hardhat-ethers';
 import '@typechain/hardhat';
 import 'hardhat-exposed';
 import 'hardhat-gas-reporter';

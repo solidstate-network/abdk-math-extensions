@@ -1,33 +1,35 @@
 # SolidState Extensions for ABDK Libraries
 
-SolidState extensions for the `abdk-libraries-solidity` [package](https://www.npmjs.com/package/abdk-libraries-solidity). Developed as a part of the [Premia Finance smart contracts](https://github.com/Premian-Labs/premia-contracts). SolidState, Premia, and this package are not affiliated with ABDK.
+SolidState extensions for the `abdk-libraries-solidity` [package](https://www.npmjs.com/package/abdk-libraries-solidity). Developed as a part of the [Premia Finance smart contracts](https://github.com/Premian-Labs/premia-contracts).
+
+> **Note**: SolidState, Premia, and this package are not affiliated with ABDK.
 
 ## Installation
 
 Install the package as well as the required ABDK package as development dependencies:
 
 ```bash
-yarn add --dev @solidstate/abdk-math-extensions abdk-libraries-solidity
+pnpm add -D @solidstate/abdk-math-extensions abdk-libraries-solidity
 ```
 
 ## Development
 
-Install dependencies via Yarn:
+Install dependencies:
 
 ```bash
-yarn install
+pnpm install
 ```
 
 Setup Husky to format code on commit:
 
 ```bash
-yarn prepare
+pnpm prepare
 ```
 
 Compile contracts via Hardhat:
 
 ```bash
-yarn run hardhat compile
+pnpm hardhat compile
 ```
 
 The Hardhat environment relies on the following environment variables. The `dotenv` package will attempt to read them from the `.env` file, if it is present.
@@ -45,17 +47,17 @@ By default, Hardhat uses the Hardhat Network in-process. Two additional networks
 Test contracts via Hardhat:
 
 ```bash
-yarn run hardhat test
+pnpm hardhat test
 ```
 
 Activate gas usage reporting by setting the `REPORT_GAS` environment variable to `"true"`:
 
 ```bash
-REPORT_GAS=true yarn run hardhat test
+REPORT_GAS=true pnpm hardhat test
 ```
 
 Generate a code coverage report using `solidity-coverage`:
 
 ```bash
-yarn run hardhat coverage
+pnpm hardhat coverage
 ```
