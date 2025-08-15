@@ -11,7 +11,7 @@ import {
   ONE_64x64,
   E_64x64,
   PI_64x64,
-} from '../src/Constants';
+} from '../src/constants';
 
 describe('ABDKMath64x64Constants', function () {
   let instance: _ABDKMath64x64Constants;
