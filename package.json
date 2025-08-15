@@ -23,7 +23,7 @@
   "author": "Nick Barry",
   "exports": {
     "./constants": "./dist/constants.js",
-    "./contracts": "./contracts/*"
+    "./contracts/*": "./contracts/*"
   },
   "types": "./dist/constants.d.ts",
   "files": [
