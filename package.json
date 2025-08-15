@@ -25,7 +25,8 @@
     "contracts/*.sol"
   ],
   "scripts": {
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "hardhat test"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.9",
