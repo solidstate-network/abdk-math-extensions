@@ -22,7 +22,8 @@
   "license": "MIT",
   "author": "Nick Barry",
   "exports": {
-    "./constants": "./dist/constants.js"
+    "./constants": "./dist/constants.js",
+    "./contracts": "./contracts/*"
   },
   "types": "./dist/constants.d.ts",
   "files": [
