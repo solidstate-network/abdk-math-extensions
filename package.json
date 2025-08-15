@@ -1,6 +1,6 @@
 {
   "name": "@solidstate/abdk-math-extensions",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Solidstate extensions for the ABDK Solidity libraries",
   "keywords": [
     "solidity",
