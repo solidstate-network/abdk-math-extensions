@@ -2,12 +2,13 @@ node_modules/
 
 artifacts/
 cache/
-
 coverage/
 coverage.json
+dist/
 
 typechain-types/
 
 contracts-exposed/
 
 .env
+.tsbuildinfo
